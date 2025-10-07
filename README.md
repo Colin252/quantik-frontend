@@ -41,5 +41,8 @@ npm start
 4.Open in browser:
 http://localhost:3000
 
+📌 Author
 
+Developed by Helton Emerson Quiroz Lopez
+Full Stack Developer | Java + Spring Boot + React.js
 
