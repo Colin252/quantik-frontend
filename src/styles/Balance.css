@@ -1,0 +1,74 @@
+.balance-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -2;
+}
+
+.balance-container {
+    background: rgba(20,20,20,0.9);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.6);
+    color: white;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.balance-container h2 {
+    color: #ff3b3b;
+    margin-bottom: 20px;
+    text-shadow: 0 0 10px rgba(255,0,0,0.8);
+}
+
+.resumen-balance {
+    display: flex;
+    justify-content: space-around;
+    gap: 20px;
+}
+
+.card {
+    flex: 1;
+    padding: 20px;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: bold;
+    box-shadow: 0 0 12px rgba(0,0,0,0.5);
+    text-align: center;
+}
+
+.card.ingreso {
+    background: rgba(0, 128, 0, 0.7);
+}
+
+.card.gasto {
+    background: rgba(200, 0, 0, 0.7);
+}
+
+.card.positivo {
+    background: rgba(0, 200, 0, 0.7);
+}
+
+.card.negativo {
+    background: rgba(200, 0, 0, 0.7);
+}

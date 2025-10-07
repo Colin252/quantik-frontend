@@ -1,0 +1,135 @@
+.ventas-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* 🎥 Fondo animado */
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4); /* ✅ más transparente */
+    z-index: -2;
+}
+
+/* Caja */
+.ventas-container {
+    background: rgba(20,20,20,0.85);
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.6);
+    color: white;
+    width: 80%;
+    max-width: 950px;
+    position: relative;
+    z-index: 1;
+}
+
+/* Título */
+.ventas-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff3b3b;
+    text-shadow: 0 0 12px rgba(255,0,0,0.7);
+    font-size: 28px;
+    font-weight: 900;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+/* Formulario */
+.form-venta {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.form-venta select,
+.form-venta input {
+    padding: 10px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-weight: 600;
+    min-width: 160px;
+}
+
+.form-venta button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 6px;
+    background: linear-gradient(90deg, #ff0000, #990000);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.form-venta button:hover {
+    background: linear-gradient(90deg, #990000, #ff0000);
+    transform: scale(1.05);
+}
+
+/* Tabla */
+.ventas-tabla {
+    width: 100%;
+    border-collapse: collapse;
+    background: rgba(0,0,0,0.6);
+    margin-top: 15px;
+}
+
+.ventas-tabla th, .ventas-tabla td {
+    border: 1px solid rgba(255,0,0,0.4);
+    padding: 10px;
+    text-align: center;
+}
+
+.ventas-tabla th {
+    background: rgba(255,0,0,0.2);
+    color: #ff3b3b;
+    font-weight: bold;
+}
+
+.ventas-tabla tr:hover {
+    background: rgba(255,0,0,0.2);
+}
+
+.editar {
+    background: #ff8800;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 5px;
+    color: white;
+    font-weight: bold;
+}
+
+.eliminar {
+    background: #ff0000;
+    padding: 6px 12px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    font-weight: bold;
+}

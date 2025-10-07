@@ -1,0 +1,60 @@
+.reportes-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+
+    /* 🔹 Flex para centrar todo */
+    display: flex;
+    justify-content: center;
+    align-items: center;   /* centra vertical */
+    padding: 60px 0;       /* 🔹 aire arriba y abajo */
+}
+
+/* 🎥 Fondo video */
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.4);
+    z-index: -2;
+}
+
+/* Caja principal */
+.reportes-container {
+    background: rgba(20,20,20,0.9);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 20px rgba(255,0,0,0.6);
+    color: white;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;          /* 🔹 centrado horizontal */
+    position: relative;
+    z-index: 1;
+}
+
+.reportes-container h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #ff3b3b;
+    text-shadow: 0 0 12px rgba(255,0,0,0.7);
+}
+
+/* Caja de gráficos */
+.chart-container {
+    margin: 20px auto;
+    background: rgba(0,0,0,0.6);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 800px;
+}
