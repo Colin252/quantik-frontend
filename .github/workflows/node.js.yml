@@ -12,11 +12,10 @@ jobs:
 
     strategy:
       matrix:
-        node-version: [18.x]   # usamos solo 18 porque ya vimos que tu proyecto lo soporta bien
+        node-version: [18.x]   # estable y soporta tu proyecto
 
     steps:
-    - name: Checkout repo
-      uses: actions/checkout@v4
+    - uses: actions/checkout@v4
 
     - name: Use Node.js ${{ matrix.node-version }}
       uses: actions/setup-node@v4
@@ -25,10 +24,10 @@ jobs:
         cache: 'npm'
 
     - name: Install dependencies
-      run: npm install   # usamos install en vez de ci para evitar conflictos si package-lock no está 100%
+      run: npm install   # cambiamos ci → install
 
     - name: Build app
       run: npm run build --if-present
 
-    - name: Run tests (optional)
+    - name: Run tests
       run: npm test --if-present
