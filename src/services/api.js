@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "https://136.112.45.90.nip.io/api", // ⚙️ IP externa segura (https + nip.io)
+    baseURL: "https://136-112-45-90.nip.io/api", // ✅ conexión HTTPS segura al backend
 });
 
 // 🔹 Request interceptor: añade Authorization si existe token
@@ -27,7 +27,6 @@ API.interceptors.response.use(
             localStorage.removeItem("token");
             localStorage.removeItem("email");
             localStorage.removeItem("role");
-            // window.location.href = "/"; // opcional redirigir al login
         }
         return Promise.reject(error);
     }
