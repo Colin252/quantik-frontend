@@ -33,14 +33,21 @@ function Register() {
         }
     };
 
-    return (
-        <div className="register-page">
-            {/* 🎥 Fondo humo */}
-            <video autoPlay loop muted playsInline className="background-video">
-                <source src="/humo.mp4" type="video/mp4" />
-            </video>
-            <div className="overlay"></div>
+    // 🎨 Fondo con imagen cinematográfica
+    const backgroundStyle = {
+        backgroundImage: `linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.7)), url(${process.env.PUBLIC_URL}/puente.webp)`,
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundAttachment: "fixed",
+        backgroundRepeat: "no-repeat",
+        minHeight: "100vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+    };
 
+    return (
+        <div className="register-page" style={backgroundStyle}>
             <div className="register-container">
                 <h2>📝 Crear Cuenta</h2>
                 <form onSubmit={handleSubmit} className="register-form">
