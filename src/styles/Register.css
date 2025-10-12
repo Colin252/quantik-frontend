@@ -1,0 +1,101 @@
+.register-page {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* 🎥 Fondo video */
+.background-video {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -3;
+}
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.5);
+    z-index: -2;
+}
+
+/* Caja principal */
+.register-container {
+    background: rgba(20,20,20,0.85);
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 0 25px rgba(255,0,0,0.7);
+    color: white;
+    width: 400px;
+    text-align: center;
+    z-index: 1;
+    backdrop-filter: blur(5px);
+}
+
+.register-container h2 {
+    margin-bottom: 25px;
+    color: #ff3b3b;
+    text-shadow: 0 0 12px rgba(255,0,0,0.8);
+    font-size: 24px;
+}
+
+/* Formulario */
+.register-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.register-form input {
+    padding: 12px;
+    border-radius: 8px;
+    border: none;
+    outline: none;
+    background: rgba(255,255,255,0.1);
+    color: white;
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.register-form input:focus {
+    background: rgba(255,255,255,0.2);
+    box-shadow: 0 0 10px rgba(255,0,0,0.5);
+}
+
+.register-form input::placeholder {
+    color: #aaa;
+}
+
+/* Botón */
+.register-form button {
+    padding: 12px;
+    border: none;
+    border-radius: 8px;
+    background: linear-gradient(90deg, #ff0000, #990000);
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.register-form button:hover {
+    background: linear-gradient(90deg, #990000, #ff0000);
+    transform: scale(1.08);
+}
+
+/* Mensaje */
+.mensaje {
+    margin-top: 20px;
+    font-weight: bold;
+    color: #ff3b3b;
+    text-shadow: 0 0 6px rgba(255,0,0,0.6);
+}

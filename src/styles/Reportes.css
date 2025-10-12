@@ -1,0 +1,65 @@
+/* 🌌 Fondo general */
+.reportes-page {
+    position: relative;
+    width: 100%;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 0;
+}
+
+/* 🌑 Capa oscura */
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: -1;
+}
+
+/* 🧱 Caja principal */
+.reportes-container {
+    background: rgba(20, 20, 20, 0.9);
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 0 25px rgba(255, 0, 0, 0.6);
+    color: white;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    position: relative;
+    z-index: 1;
+    text-align: center;
+}
+
+.reportes-container h2 {
+    color: #ff3b3b;
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.8);
+    margin-bottom: 25px;
+    font-size: 30px;
+}
+
+/* 📊 Contenedor de gráficos */
+.chart-container {
+    margin: 25px auto;
+    background: rgba(0, 0, 0, 0.65);
+    padding: 20px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 850px;
+    box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+}
+
+.chart-container h3 {
+    color: #ff3b3b;
+    margin-bottom: 15px;
+    text-shadow: 0 0 8px rgba(255, 0, 0, 0.5);
+}
+
+/* 🧭 Tooltips */
+.recharts-default-tooltip {
+    background-color: rgba(0, 0, 0, 0.85) !important;
+    border: 1px solid #ff0000 !important;
+    color: white !important;
+}

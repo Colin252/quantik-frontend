@@ -1,0 +1,13 @@
+/* 🌌 Fondo general de páginas con la textura de Botones.webp */
+.page-background {
+    background-image: url("/botones.webp");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
