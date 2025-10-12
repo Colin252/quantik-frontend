@@ -2,7 +2,7 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://136.112.45.90:8080/api", // ⚙️ IP externa de tu VM
+    baseURL: "https://136.112.45.90.nip.io/api", // ⚙️ IP externa segura (https + nip.io)
 });
 
 // 🔹 Request interceptor: añade Authorization si existe token

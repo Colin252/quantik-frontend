@@ -2,7 +2,7 @@
   "name": "quantik-frontend",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Colin252.github.io/quantik-frontend",
+  "homepage": "https://quantik-frontend.vercel.app",
   "dependencies": {
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
