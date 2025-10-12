@@ -2,10 +2,10 @@
 import axios from "axios";
 
 const API = axios.create({
-    baseURL: "http://136.112.45.90:8080/api", // ✅ conexión HTTPS segura al backend
+    baseURL: "https://136-112-45-90.nip.io:8443/api", // ✅ conexión HTTPS real a tu backend
 });
 
-// 🔹 Request interceptor: añade Authorization si existe token
+// 🔹 Interceptor para agregar el token automáticamente
 API.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem("token");
@@ -19,15 +19,24 @@ API.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// 🔹 Response interceptor: manejar 401/403 → limpiar token
+// 🔹 Interceptor para manejar errores 401/403 y limpiar sesión
 API.interceptors.response.use(
     (response) => response,
     (error) => {
-        if (error.response && (error.response.status === 401 || error.response.status === 403)) {
+        if (
+            error.response &&
+            (error.response.status === 401 || error.response.status === 403)
+        ) {
             localStorage.removeItem("token");
             localStorage.removeItem("email");
             localStorage.removeItem("role");
         }
+
+        // Muestra error de red en consola para debug
+        if (error.message === "Network Error") {
+            console.error("🚨 No se pudo conectar al backend (verifica HTTPS o CORS)");
+        }
+
         return Promise.reject(error);
     }
 );
