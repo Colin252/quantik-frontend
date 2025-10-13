@@ -101,8 +101,5 @@ Full Stack Java + React Developer
 🌐 LinkedIn
 Domains
 quantik-frontend.vercel.app
-+1
-quantik-frontend-git-main-colin252s-projects.vercel.app
-quantik-frontend-c3731c40a-colin252s-projects.vercel.app
 
 💻 Backend Repository
