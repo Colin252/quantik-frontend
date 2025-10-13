@@ -100,6 +100,6 @@ Full Stack Java + React Developer
 
 🌐 LinkedIn
 Domains
-quantik-frontend.vercel.app
+https://quantik-frontend.vercel.app/
 
 💻 Backend Repository
