@@ -1,11 +1,17 @@
 // src/services/api.js
 import axios from "axios";
 
+// 🌐 Proxy HTTPS en Render que reenvía al backend de la VM Quantik
 const API = axios.create({
-    baseURL: "https://136-112-45-90.nip.io:8443/api", // ✅ conexión HTTPS real a tu backend
+    baseURL: "https://quantik-proxy.onrender.com/api", // ✅ proxy seguro sin CORS
+    timeout: 10000, // 🔹 Evita bloqueos largos
+    headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json",
+    },
 });
 
-// 🔹 Interceptor para agregar el token automáticamente
+// 🔹 Interceptor para agregar automáticamente el token JWT en cada request
 API.interceptors.request.use(
     (config) => {
         const token = localStorage.getItem("token");
@@ -19,7 +25,7 @@ API.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
-// 🔹 Interceptor para manejar errores 401/403 y limpiar sesión
+// 🔹 Interceptor para manejar errores comunes (401, 403, red, etc.)
 API.interceptors.response.use(
     (response) => response,
     (error) => {
@@ -27,14 +33,14 @@ API.interceptors.response.use(
             error.response &&
             (error.response.status === 401 || error.response.status === 403)
         ) {
+            console.warn("⚠️ Sesión expirada o token inválido. Cerrando sesión...");
             localStorage.removeItem("token");
             localStorage.removeItem("email");
             localStorage.removeItem("role");
         }
 
-        // Muestra error de red en consola para debug
         if (error.message === "Network Error") {
-            console.error("🚨 No se pudo conectar al backend (verifica HTTPS o CORS)");
+            console.error("🚨 No se pudo conectar al proxy o al backend (Render/VM)");
         }
 
         return Promise.reject(error);
